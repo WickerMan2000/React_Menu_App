@@ -1,0 +1,13 @@
+.index {
+    position: absolute;
+    left: 8rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    bottom: 0.65rem;
+    width: 18%;
+    padding: 0.4rem 0.4rem;
+    box-sizing: border-box;
+    text-align: center;
+    background: red;
+    overflow: hidden;
+}

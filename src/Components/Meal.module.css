@@ -1,0 +1,53 @@
+.meal {
+    position: relative;
+}
+
+ul {
+    list-style: none;
+    padding-top: 1rem;
+}
+
+.meal h1 {
+    position: absolute;
+    left: 52rem;
+    bottom: 6rem;
+    color: black;
+    font-size: larger;
+    font-weight: 900;
+}
+
+.meal Button {
+    position: relative;
+    left: 53rem;
+    bottom: 2.5rem;
+}
+
+.meal input {
+    position: absolute;
+    left: 58rem;
+    bottom: 7rem;
+    width: 4%;
+    height: 1.8rem;
+    border-radius: 8px;
+    font-size: large;
+    font-weight: bolder;
+}
+
+hr {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    border: 0.1px solid rgba(177, 172, 172, 0.7);
+}
+
+Button:disabled{
+    background-color: #AC9980;
+    border: 1px solid #7E7365;
+    color: #ccc;
+    cursor: default;
+}
+
+Button:hover:disabled{
+    background-color: #AC9980;
+    color: #ccc;
+    cursor: not-allowed;
+}
