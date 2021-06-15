@@ -1,12 +1,11 @@
-import { useContext } from 'react';
-import InputContext from './store/InputContext';
+import { useSelector } from 'react-redux';
 import styles from './Index.module.css';
 
 const Index = () => {
-    const context = useContext(InputContext);
-    
+    const totalAmount = useSelector(state => state.meal.totalSum);
+
     return (
-        <div className={styles.index}>{context.totalAmount}</div>
+        <div className={styles.index}>{totalAmount}</div>
     );
 }
 

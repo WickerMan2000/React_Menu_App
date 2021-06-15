@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import Header from './Components/Header';
 import Menu from './Components/Menu';
-import InputContextProvider from './Components/store/InputContextProvider';
 
 const MEALS = [
   {
@@ -33,12 +32,10 @@ const MEALS = [
 const App = () => {
 
   return (
-      <InputContextProvider>
-        <Fragment>
-          <Header />
-          <Menu meals={MEALS} />
-        </Fragment>
-      </InputContextProvider>
+    <Fragment>
+      <Header />
+      <Menu meals={MEALS} />
+    </Fragment>
   );
 }
 

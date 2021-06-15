@@ -1,13 +1,13 @@
-import React, { Fragment, useContext, useState } from 'react';
-import InputContext from './store/InputContext';
+import React, { Fragment, useState } from 'react';
 import MiniCart from './MiniCart';
 import Button from '../UI/Button';
 import cartModalListStyles from './CartModalList.module.css';
 import miniCartStyles from './MiniCart.module.css';
+import { useSelector } from 'react-redux';
 
 const CartModalList = ({ onClick }) => {
-    const inputCtx = useContext(InputContext);
-    const myMeals = Object.values(inputCtx.listOfMeals.reduce((accumulator, myOrder) => {
+    const listOfMeals = useSelector(state => state.meal.allMyMeals);
+    const myMeals = Object.values(listOfMeals.reduce((accumulator, myOrder) => {
         if (myOrder.meal.title in accumulator) {
             accumulator[myOrder.meal.title].item += myOrder.meal.item
         } else {

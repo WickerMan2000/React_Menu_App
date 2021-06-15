@@ -1,7 +1,9 @@
+import React from 'react';
 import Button from '../UI/Button';
-import { useContext, useReducer } from 'react';
-import InputContext from './store/InputContext';
+import { useReducer } from 'react';
+import { mealActions } from './store/index';
 import styles from './Meal.module.css';
+import { useDispatch } from 'react-redux';
 
 const defaultState = { amount: 1, allowedNumberOfItems: 0 }
 
@@ -15,9 +17,9 @@ const inputReducer = (state, action) => {
     return defaultState;
 }
 
-const Meal = ({ title, description, price }) => {
+const Meal = React.memo(({ title, description, price, counter = 0 }) => {
     const [input, dispatchInput] = useReducer(inputReducer, defaultState);
-    const inputCtx = useContext(InputContext);
+    const dispatch = useDispatch();
 
     const numberChangeHandler = event => {
         const { value } = event.target;
@@ -29,15 +31,14 @@ const Meal = ({ title, description, price }) => {
 
     const click = () => {
         dispatchInput({ type: 'CHECK_NUMBER_OF_ITEMS' });
-        inputCtx.dispatch({
-            type: 'TOTAL_SUM',
+        dispatch(mealActions.addToTotal({
             meal: {
                 title: title,
                 description: description,
                 price: price,
                 item: input.amount
             }
-        });
+        }))
     }
 
     return (
@@ -51,10 +52,10 @@ const Meal = ({ title, description, price }) => {
                 <h1>Amount</h1>
             </div>
             <input type="number" value={input.amount} onChange={numberChangeHandler} />
-            <Button disabled={input.allowedNumberOfItems + input.amount > 5} onClick={click}>+Add</Button>
+            <Button disabled={counter + input.allowedNumberOfItems + input.amount > 5} onClick={click}>+Add</Button>
             <hr></hr>
         </div>
     );
-}
+})
 
 export default Meal;

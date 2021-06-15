@@ -1,7 +1,8 @@
-import React, { Fragment, useContext, useReducer } from "react";
+import React, { Fragment, useReducer } from "react";
+import { useDispatch } from "react-redux";
+import { counterActions, mealActions } from './store/index';
 import Button from '../UI/Button';
 import styles from './MiniCart.module.css';
-import InputContext from './store/InputContext';
 
 const reducer = (state, action) => {
     if (action.type === 'INCREAMENT') {
@@ -15,20 +16,20 @@ const reducer = (state, action) => {
 
 const MiniCart = ({ updateChange, item, title, description, price }) => {
     const [change, dispatchChange] = useReducer(reducer, { count: item });
-    const context = useContext(InputContext);
+    const dispatch = useDispatch();
 
     const changeUpdater = (type, counter) => {
         dispatchChange({ type: type });
+        dispatch(counterActions.changeCounter({ counter: counter, title: title }));
         updateChange({ newQuantity: change.count + counter });
-        context.dispatch({
-            type: type,
+        dispatch(mealActions.change({
             meal: {
                 title: title,
                 description: description,
                 price: price,
                 item: counter
             }
-        })
+        }))
     }
 
     return (
