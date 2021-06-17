@@ -1,9 +1,19 @@
 .menu {
+  border-radius: 12px;
+  background: cornsilk;
+  width: 40%;
+  left: 15rem;
+  top: 10rem;
+  border: 2px solid;
+}
+
+@media (min-width: 40rem) {
+  .menu {
     border-radius: 12px;
-    background: cornsilk;
     position: fixed;
     width: 70%;
     left: 15rem;
     top: 10rem;
     border: 2px solid;
+  }
 }

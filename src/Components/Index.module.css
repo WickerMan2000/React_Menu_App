@@ -10,4 +10,6 @@
     text-align: center;
     background: red;
     overflow: hidden;
+    grid-column: 8/9;
+    grid-row: 2/3;
 }
