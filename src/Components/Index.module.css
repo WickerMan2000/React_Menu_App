@@ -1,4 +1,21 @@
 .index {
+  position: absolute;
+  left: 6rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  bottom: 0.65rem;
+  width: 18%;
+  padding: 0.4rem 0.4rem;
+  box-sizing: border-box;
+  text-align: center;
+  background: red;
+  overflow: hidden;
+  grid-column: 8/9;
+  grid-row: 2/3;
+}
+
+@media (min-width: 1200px) {
+  .index {
     position: absolute;
     left: 8rem;
     font-size: 1rem;
@@ -12,4 +29,5 @@
     overflow: hidden;
     grid-column: 8/9;
     grid-row: 2/3;
+  }
 }

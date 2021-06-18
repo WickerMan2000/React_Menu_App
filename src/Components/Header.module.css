@@ -1,38 +1,59 @@
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(155, 5, 5, 0.8);
-    padding: 0.5rem 1rem;
-    width: 100%;
-    height: 5rem;
-    font-weight: bolder;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(155, 5, 5, 0.8);
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: 5rem;
+  font-weight: bolder;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 h1 {
-    position: absolute;
-    left: 4rem;
-    bottom: 0rem;
-    font-size: 2.5rem;
-    color: ivory;
-    margin-bottom: 1rem;
+  position: absolute;
+  left: 4rem;
+  bottom: 0rem;
+  font-size: 2.5rem;
+  color: ivory;
+  margin-bottom: 1rem;
 }
 
 header Button {
+  border-radius: 32px;
+  height: 3.5rem;
+  position: relative;
+  left: 35rem;
+  top: 0.5rem;
+  bottom: 0.05rem;
+}
+
+header h2 {
+  position: absolute;
+  font-size: 1rem;
+  left: 0.5rem;
+  bottom: 0.25rem;
+  font-size: medium;
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  header Button {
     border-radius: 32px;
     height: 3.5rem;
     position: relative;
     left: 75rem;
     top: 0.5rem;
     bottom: 0.05rem;
-}   
+  }
 
-header h2 {
+  header h2 {
     position: absolute;
     font-size: 1rem;
     left: 1.5rem;
     bottom: 0.25rem;
     font-size: medium;
     text-align: center;
+  }
 }

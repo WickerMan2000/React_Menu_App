@@ -6,7 +6,7 @@ import miniCartStyles from "./MiniCart.module.css";
 import { useSelector } from "react-redux";
 
 const CartModalList = ({ onClick }) => {
-  const listOfMeals = useSelector((state) => state.meal.allMyMeals);
+  const listOfMeals = useSelector(state => state.meal.allMyMeals);
   const myMeals = Object.values(
     listOfMeals.reduce((accumulator, myOrder) => {
       if (myOrder.meal.title in accumulator) {
@@ -38,7 +38,7 @@ const CartModalList = ({ onClick }) => {
     <Fragment>
       <div className={cartModalListStyles.mealList}>
         {quantity.map(
-          (meal) =>
+          meal =>
             meal.item > 0 && (
               <MiniCart
                 key={Math.random()}
